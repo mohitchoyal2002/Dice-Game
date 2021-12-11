@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+   
+  </head>
+  <body>
+
+    <div class="container">
+      <!-- <h1>Refresh Me</h1> -->
+      <!-- <h1>name</h1> -->
+       <script src="index.js"></script>
+       <h1 class="result">Draw</h1>
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="images/dice6.png">
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="images/dice6.png">
+      </div>
+
+      <script>
+        function rollOut(){
+        // var name = prompt("What is your name: ");
+      // alert(name);
+      var randomNumber1 = Math.floor(Math.random()*6)+1;
+      var randomNumber2 = Math.floor(Math.random()*6)+1;
+      // console.log(randomNumber);
+
+      document.querySelector(".img1").setAttribute("src","images/dice"+randomNumber1+".png");
+      document.querySelector(".img2").setAttribute("src","images/dice"+randomNumber2+".png");
+      if(randomNumber1>randomNumber2){
+      document.querySelector(".result").innerHTML="Player 1 Win !";
+      }
+      else if(randomNumber1===randomNumber2){
+        document.querySelector(".result").innerHTML="Draw";
+      }
+      else{
+        document.querySelector(".result").innerHTML="Player 2 Win !";
+      }
+    }
+
+      </script>
+      <br>
+    <button class="btn" onclick="rollOut()">Roll Dice</button>
+
+    </div>
+    
+  </body>
+
+  <footer>
+    www 🎲 diceeGames 🎲 com
+  </footer>
+</html>
